@@ -20,6 +20,7 @@
             android:id="@+id/heroe_name_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorAccent"
             android:textSize="@dimen/text_size_mediun"
             android:textStyle="bold"
             android:maxLines="2" />
@@ -27,6 +28,7 @@
         <TextView
             android:id="@+id/heroe_description_tv"
             android:layout_width="match_parent"
+            android:textColor="@color/colorAccent"
             android:layout_height="wrap_content"
             android:textSize="@dimen/text_size_mediun"/>
     </LinearLayout>
