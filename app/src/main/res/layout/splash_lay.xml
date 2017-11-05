@@ -8,6 +8,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/candidates_name"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"
         android:textSize="@dimen/text_size_big" />
 </merge>
 

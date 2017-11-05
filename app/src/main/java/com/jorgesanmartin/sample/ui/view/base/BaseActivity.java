@@ -1,5 +1,6 @@
 package com.jorgesanmartin.sample.ui.view.base;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -8,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 
 import com.jorgesanmartin.sample.R;
 import com.jorgesanmartin.sample.ui.view.AppNavigation;
@@ -48,6 +51,8 @@ public abstract class BaseActivity <F extends MVPFragment> extends AppCompatActi
     protected void initToolBar(){
         setSupportActionBar(mToolbar);
         setToolBarBackgroundColor(toolbarColor());
+        setStatusColor(ContextCompat.getColor(this, R
+                .color.colorPrimary));
     }
 
     protected void initFragment() {
@@ -101,6 +106,15 @@ public abstract class BaseActivity <F extends MVPFragment> extends AppCompatActi
 
     public void hideLoading() {
         loaderView.setVisibility(View.GONE);
+    }
+
+    public void setStatusColor(int color) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = this.getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            window.setStatusBarColor(color);
+        }
     }
 }
 

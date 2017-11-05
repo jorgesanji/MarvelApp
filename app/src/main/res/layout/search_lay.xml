@@ -9,6 +9,7 @@
         android:layout_marginTop="@dimen/margin_mediun"
         android:textSize="@dimen/text_size_big"
         android:textStyle="bold"
+        android:textColor="@color/colorAccent"
         android:text="@string/title_home" />
 
     <EditText

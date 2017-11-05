@@ -52,10 +52,8 @@ public class HeroesListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
         @BindView(R.id.heroe_imv)
         protected ImageView mheroeImv;
-
         @BindView(R.id.heroe_name_tv)
         protected TextView mheroNameTv;
-
         @BindView(R.id.heroe_description_tv)
         protected TextView mHeroeDescriptionTv;
 
@@ -67,6 +65,8 @@ public class HeroesListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         public void bind(Heroe heroe){
             ImageLoader.loadRoundImage(mheroeImv, heroe.getImage());
             mheroNameTv.setText(heroe.getName());
+            boolean hasDescription = heroe.getDescription() != null && !heroe.getDescription().isEmpty();
+            mHeroeDescriptionTv.setVisibility(hasDescription ? View.VISIBLE : View.GONE);
             mHeroeDescriptionTv.setText(heroe.getDescription());
             mHeroeDescriptionTv.setEllipsize(TextUtils.TruncateAt.END);
             mHeroeDescriptionTv.setMaxLines(3);

@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -110,6 +111,8 @@ public class DetailHeroeScreen extends BaseLinearLayout {
     }
 
     public void setHeroeDescription(String description){
+        boolean hasDescription = description != null && !description.isEmpty();
+        mHeroeDescriptionTv.setVisibility(hasDescription ? View.VISIBLE:View.GONE);
         mHeroeDescriptionTv.setText(description);
     }
 
