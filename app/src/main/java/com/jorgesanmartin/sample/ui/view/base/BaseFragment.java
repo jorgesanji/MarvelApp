@@ -72,12 +72,12 @@ public abstract class BaseFragment extends Fragment implements Presenter.View{
 
     @Override
     public void showLoading() {
-        ((BaseActivity)getActivity()).showLoading();
+        ((BaseFragmentActivity)getActivity()).showLoading();
     }
 
     @Override
     public void hideLoading() {
-        ((BaseActivity)getActivity()).hideLoading();
+        ((BaseFragmentActivity)getActivity()).hideLoading();
     }
 
     @Override

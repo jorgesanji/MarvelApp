@@ -3,11 +3,12 @@ package com.jorgesanmartin.sample.ui.view.splash;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.content.ContextCompat;
 
 import com.jorgesanmartin.sample.ui.view.AppNavigation;
+import com.jorgesanmartin.sample.ui.view.base.BaseActivity;
 
-public class SplashActivity extends AppCompatActivity {
+public class SplashActivity extends BaseActivity {
 
     private static final long splashTime = 2000;
     private Handler handler = new Handler(Looper.myLooper());
@@ -35,5 +36,6 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(new SplashScreen(this));
-    }
+        setStatusColor(ContextCompat.getColor(this, android.R
+                .color.white));    }
 }
